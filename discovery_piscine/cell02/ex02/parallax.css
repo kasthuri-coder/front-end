@@ -1,0 +1,23 @@
+html, body{height:100%;
+	margin:0;}
+	.first{background-image:url('https://media.gokonfetti.com/43055/910x0/strand-mit-blauem-wasser-oelbild-v0g0kjgd.webp');}
+	.second{background-image:url('https://www.peta.de/wp-content/uploads/2021/09/Meereszoo-aquarium-2575575-c-pixabay-990x660.jpg');}
+.message{font-size:36px;
+	color:grey;
+	font-weight:bold;
+	font-family:sans-serif;
+	text-align:center;}
+.parallax{position:relative;
+	background-attachment:fixed;
+	background-size:cover;
+	background-position:center;
+	height:100vh;
+	justify-content:center;
+	align-items: center;
+	text-align:center;
+	display:flex;}
+.black{background-color:black;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;}

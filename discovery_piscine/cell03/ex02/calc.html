@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            body{font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 50px;}
+            input, select, button{margin: 10px;
+                                padding: 5px;}
+            #result{margin-top: 20px;
+                    font-size: 20px;
+                    font-weight: bold;}                                
+        </style>
+        <script>
+            function calculate (){
+            let left = document.getElementById('left').value;
+            let operator = document.getElementById('operator').value;
+            let right = document.getElementById('right').value;
+            let resultDisplay=document.getElementById('result');
+
+            if (left=== "" || right === ""){
+                alert('Error :(');
+                resultDisplay.textContent="Error :(";
+                return;
+            }
+            
+            left = parseFloat(left);
+            right = parseFloat(right);
+
+            if (left < 0 || right < 0){
+                alert('Error :(');
+                resultDisplay.textContent="Error :(";
+                return;
+            }
+
+            if ((operator === '/' || operator === '%') && right === 0){
+                alert("It's over 9000!");
+                console.log("Its' over 9000!");
+                resultDisplay.textContent="It's over 9000!";
+                return;
+            }
+            let result;
+            switch(operator){
+                case '+':result=left+right; break;
+                case '-':result=left-right; break;
+                case '*':result=left*right; break;
+                case '/':result=left/right; break;
+                case '%':result=left%right; break;
+                      }
+
+            alert('Result:' + result);
+            console.log('Result:', result);
+            resultDisplay.textContent="Result: "+ result;
+
+            setInterval(() => {alert('Please, use me...');}, 30000);
+                    };
+        </script>
+    </head>
+    <body>
+        <h2>Calculator</h2>
+        <input type="number" id="left" min="0" placeholder="Enter a number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="right" min="0" placeholder="Enter a number">
+        <button onclick="calculate()">Try me!</button>
+        <div id ="result"></div>
+    </body>
+</html>
